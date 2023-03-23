@@ -2,10 +2,13 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass, faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import { faHeart } from '@fortawesome/free-regular-svg-icons'
+import { useNavigate } from 'react-router-dom'
 
 const Nav = () => {
   const loginList = ['매장찾기', '고객센터', '가입하기', '로그인'];
-  const menuList = ['New Releases', 'Men', 'Women', 'Kids', 'Sale', 'SNKRS', '나이키 앱']
+  const menuList = ['New Releases', 'Men', 'Women', 'Kids', 'Sale', 'SNKRS', '나이키 앱'];
+  const goToLogin = useNavigate();
+
 
   return (
     <div>
@@ -13,7 +16,12 @@ const Nav = () => {
         <ul className='login-list'>
           {
             loginList.map((item, i) => {
-              return <li className='login-item' key={i}>{item}</li>
+              return i == 3 ? <li className='login-item' onClick={()=>{navigate('/login')}} key={i}>{item}</li> : <li className='login-item' key={i}>{item}</li>
+              // if( i === loginList.lenght -1) {
+              //  <li className='login-item' key={i} onClick={goToLogin('/login')}>{item}</li>
+              // } else {
+              //  <li className='login-item' key={i}}>{item}</li>
+              // }
             })
           }
         </ul>

@@ -60,15 +60,23 @@ const ProductAll = () => {
   },[]);
 
   return (
-    <div>
+
+    <Container>
+    <Row>
       {
         productsList.map((menu, i)=>{
           return (
-            <ProductCard menu={menu}/>
+            <Col lg={4}>
+              <ProductCard menu={menu}/>
+            </Col>  
           )
         })
       }
-    </div>
+    </Row>
+  </Container>
+
+
+
   )
 }
 
