@@ -22,7 +22,7 @@ li {
   font-weight: 600;
 }
 
-.login-list li:nth-child(4) {
+.login-list li {
   cursor: pointer;
 }
 

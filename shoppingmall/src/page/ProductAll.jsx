@@ -3,14 +3,10 @@ import { useEffect, useState } from 'react'
 import ProductCard from '../component/ProductCard';
 import { Container, Row, Col } from 'react-bootstrap'
 
-
-
 //useeffect는 두개의 파라미터를 갖는다. 1
 
 const ProductAll = () => {
   const [productsList, setProductList] = useState([]);
-
-
 
 
   // async await로 http를 요청한 것이다.
@@ -61,7 +57,7 @@ const ProductAll = () => {
 
   return (
 
-    <Container>
+   <Container>
     <Row>
       {
         productsList.map((menu, i)=>{
@@ -73,7 +69,7 @@ const ProductAll = () => {
         })
       }
     </Row>
-  </Container>
+   </Container>
 
 
 

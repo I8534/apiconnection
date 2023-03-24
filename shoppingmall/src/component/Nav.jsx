@@ -7,7 +7,10 @@ import { useNavigate } from 'react-router-dom'
 const Nav = () => {
   const loginList = ['매장찾기', '고객센터', '가입하기', '로그인'];
   const menuList = ['New Releases', 'Men', 'Women', 'Kids', 'Sale', 'SNKRS', '나이키 앱'];
-  const goToLogin = useNavigate();
+  const navigate = useNavigate();
+  const goToLogin = () => {
+    navigate('/login');
+  }
 
 
   return (
@@ -18,7 +21,7 @@ const Nav = () => {
             loginList.map((item, i) => {
               return i == 3 ? <li className='login-item' onClick={()=>{navigate('/login')}} key={i}>{item}</li> : <li className='login-item' key={i}>{item}</li>
               // if( i === loginList.lenght -1) {
-              //  <li className='login-item' key={i} onClick={goToLogin('/login')}>{item}</li>
+              //  <li className='login-item' key={i} onClick={goToLogin}>{item}</li>
               // } else {
               //  <li className='login-item' key={i}}>{item}</li>
               // }
